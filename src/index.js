@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import {con} from "./config/database.js";
+import routeProduto from './routes/routes.produtos.js';
+import routePedido from './routes/routes.pedidos.js';
 
 const app = express();
 
@@ -8,18 +9,9 @@ app.use(express.json());
 app.use(cors());
 
 //rotas
-app.get('/olamundo', function(req, res){
-    res.status(200).send("Olá Mundo!")
-});
+app.use(routeProduto)
+app.use(routePedido)
 
-app.get("/produtos", function(req,res){
-    con.query('select * from produto', function(err, result){
-        if (err)
-            return res.status(500).send("Ocorreu um erro: " + err.message);
-        else
-            return res.status(200).json(result);  
-    })
-});
 
 //levanta o server
 app.listen(3001, function(){
