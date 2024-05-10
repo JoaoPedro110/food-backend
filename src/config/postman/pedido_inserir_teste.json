@@ -9,5 +9,17 @@
     "end_cidade": "Votuporanga", 
     "end_uf": "SP", 
     "end_cep": "15500000",
-    "total": 36.90 
+    "total": 36.90 ,
+    "itens": [
+        {
+            "id_produto": 1,
+            "quantidade": 1,
+            "valor_unitario": 24.90
+        },
+        {
+            "id_produto": 2,
+            "quantidade": 1,
+            "valor_unitario": 12.00
+        }
+    ]
 }

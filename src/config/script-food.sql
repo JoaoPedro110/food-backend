@@ -58,5 +58,8 @@ create table pedido (
     
 INSERT INTO usuario (nome, email, senha, adm) VALUES ('Administrador', 'adm@adm.com.br', 'adm', true);
 INSERT INTO produto (nome, descricao, preco) VALUES ('Burger','Hamburger de 180g, queijo, tomate, alface e cebola', 24.90);
-select * from pedido
+INSERT INTO produto (nome, descricao, preco) VALUES ('Batata Frita','Batata Fritas crocantes e douradas', 12.00);
+INSERT INTO produto (nome, descricao, preco) VALUES ('Milkshake','Um milkshake cremoso feito com sorvete de chocolate', 14.90);
+select * from pedido;
+select * from pedido_item;
     
