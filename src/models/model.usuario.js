@@ -10,7 +10,19 @@ class UsuarioModel {
             if (err)
                 callback(err, null);
             else 
-                callback(null, result)
+                callback(null, result);
+        });
+    }
+
+    // Método para criar um novo usuário
+    static createUsuario(nome, email, senha, callback) {
+        let sql = `insert into usuario (nome, email, senha) values (?,?,?)`;
+
+        con.query(sql, [nome, email, senha], function(err, result){
+            if (err)
+                callback(err, null);
+            else 
+                callback(null, result);
         });
     }
 
