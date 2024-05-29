@@ -54,6 +54,39 @@ class UsuarioController {
         }
     }
 
+    static editUsuario(req, res) {
+        const id = req.params.id;
+        const p = req.body;
+        const nome = p.nome;
+        const email = p.email;
+
+        try {
+            UsuarioModel.editUsuario(id, nome, email, function (err, result) {
+                if (err) {
+                    console.error("Erro ao editar o usuário", err);
+                    return res.status(500).json({ error: "Ocorreu um erro ao editar o usuário." })
+                }
+
+                if (result.affectedRows === 0) {
+                    return res.status(404).json({ message: "Usuário não encontrado." });
+                }
+
+                return res.status(200).json(
+                    {
+                        message: "Usuário editado com sucesso",
+                        data: {
+                            id, nome, email
+                        }
+                    }
+                );
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: "Erro interno do servidor." });
+        }
+
+    }
+
 }
 
 export default UsuarioController;

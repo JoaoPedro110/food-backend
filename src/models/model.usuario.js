@@ -26,6 +26,18 @@ class UsuarioModel {
         });
     }
 
+    // Método para editar um usuário existente
+    static editUsuario(id, nome, email, callback){
+        let sql = `update usuario set nome=?, email=? where id_usuario=?`
+
+        con.query(sql, [nome, email, id], function(err, result){
+            if (err)
+                callback(err, null);
+            else
+                callback(null, result);
+        });
+    }
+
 }
 
 export default UsuarioModel;
