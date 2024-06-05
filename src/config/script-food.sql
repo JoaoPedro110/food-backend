@@ -48,7 +48,7 @@ create table pedido (
 drop table pedido;
 drop table pedido_item;
     
-    create table pedido_item (
+create table pedido_item (
     id_item int auto_increment,
     id_pedido int,
     id_produto int,
