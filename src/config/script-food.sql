@@ -3,6 +3,7 @@ show databases;
 -- Criar o banco de dados
 create database food;
 use food;
+drop database food;
 
 -- Criar as tabelas 
 -- Criar Usuario
@@ -44,6 +45,8 @@ create table pedido (
     foreign key (id_usuario)
 		references usuario (id_usuario)
 );
+drop table pedido;
+drop table pedido_item;
     
     create table pedido_item (
     id_item int auto_increment,
@@ -55,7 +58,8 @@ create table pedido (
     foreign key (id_pedido) references pedido (id_pedido),
     foreign key (id_produto) references produto (id_produto)
 );
-    
+
+
 INSERT INTO usuario (nome, email, senha, adm) VALUES ('Administrador', 'adm@adm.com.br', 'adm', true);
 INSERT INTO produto (nome, descricao, preco) VALUES ('Burger','Hamburger de 180g, queijo, tomate, alface e cebola', 24.90);
 INSERT INTO produto (nome, descricao, preco) VALUES ('Batata Frita','Batata Fritas crocantes e douradas', 12.00);

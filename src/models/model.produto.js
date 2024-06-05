@@ -13,6 +13,8 @@ class ProdutoModel {
         })
     }
 
+    
+
 }
 
 export default ProdutoModel;

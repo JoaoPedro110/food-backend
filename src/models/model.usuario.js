@@ -38,6 +38,18 @@ class UsuarioModel {
         });
     }
 
+    // Método para remover um usuário existente
+    static removeUsuario(id, callback) {
+        let sql = `delete from usuario where id_usuario=?`;
+
+        con.query(sql, [id], function(err, result){
+            if(err)
+                callback(err, null);
+            else
+                callback(null, result);
+        });
+    }
+
 }
 
 export default UsuarioModel;
