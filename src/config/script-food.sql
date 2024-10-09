@@ -66,4 +66,4 @@ INSERT INTO produto (nome, descricao, preco) VALUES ('Batata Frita','Batata Frit
 INSERT INTO produto (nome, descricao, preco) VALUES ('Milkshake','Um milkshake cremoso feito com sorvete de chocolate', 14.90);
 select * from pedido;
 select * from pedido_item;
-    
+
